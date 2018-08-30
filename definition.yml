@@ -1,6 +1,6 @@
 id: identity
-docker_repository: dynverse/dynmethods:identity
-container_url: https://github.com/dynverse/dynmethods/tree/master/containers/identity
+docker_repository: dynverse/ti_identity
+container_url: https://github.com/dynverse/ti_identity
 name: 'Control: identity'
 type: control_test
 platform: R
