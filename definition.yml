@@ -2,8 +2,8 @@ id: identity
 docker_repository: dynverse/ti_identity
 singularity_collection: 1551
 container_url: https://github.com/dynverse/ti_identity
-name: 'Control: identity'
-type: control_test
+name: Identity
+type: control
 platform: R
 trajectory_types:
 - cycle
