@@ -1,37 +1,29 @@
-id: identity
-docker_repository: dynverse/ti_identity
-singularity_collection: 1551
-container_url: https://github.com/dynverse/ti_identity
-name: Identity
-source: control
-platform: R
-trajectory_types:
-- cycle
-- linear
-- bifurcation
-- convergence
-- multifurcation
-- binary_tree
-- tree
-- acyclic_graph
-- graph
-- disconnected_graph
-topology_inference: free
-parameters:
-  dummy_param:
-    type: numeric
-    default: 0.5
-    upper: 1.0
-    lower: 0.0e+00
-    description: Dummy parameter
-input:
-  format: rds
-  required:
+method:
+  id: identity
+  name: Identity
+  source: control
+  platform: R
+
+container:
+  url: https://github.com/dynverse/ti_identity
+  docker: dynverse/ti_identity
+
+wrapper:
+  type: trajectory
+  topology_inference: free
+  trajectory_types:
+  - cycle
+  - linear
+  - bifurcation
+  - convergence
+  - multifurcation
+  - tree
+  - acyclic_graph
+  - graph
+  - disconnected_graph
+  example: /code/example.R
+  input_required:
   - counts
   - dataset
-output:
-  format: rds
-  outputs:
-  - trajectory
-  - timings
-wrapper_type: trajectory
+
+parameters: []
