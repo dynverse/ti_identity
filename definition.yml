@@ -21,7 +21,6 @@ wrapper:
   - acyclic_graph
   - graph
   - disconnected_graph
-  example: /code/example.R
   input_required:
   - counts
   - dataset
