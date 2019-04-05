@@ -1,16 +1,9 @@
 #!/usr/local/bin/Rscript
 
 task <- dyncli::main()
-#task <- dyncli::main(
-#  c("--dataset", "./example.h5", "--output", "./output.h5"),
-#  "./definition.yml"
-#)
 
-library(jsonlite)
-library(readr)
-library(dplyr)
+library(dynwrap)
 library(purrr)
-
 
 #   ____________________________________________________________________________
 #   Load data                                                               ####
@@ -19,17 +12,17 @@ counts <- task$counts
 dataset <- task$priors$dataset
 
 # TIMING: done with preproc
-checkpoints <- list(method_afterpreproc = as.numeric(Sys.time()))
+checkpoints <- list(method_afterpreproc = Sys.time())
 
 # TIMING: done with method
-checkpoints$method_aftermethod <- as.numeric(Sys.time())
-
+checkpoints$method_aftermethod <- Sys.time())
 
 #   ____________________________________________________________________________
 #   Save output                                                             ####
 
-output <- dynwrap::wrap_data(cell_ids = rownames(counts)) %>%
-  dynwrap::add_trajectory(
+output <- 
+  wrap_data(cell_ids = rownames(counts)) %>%
+  add_trajectory(
     milestone_network = dataset$milestone_network,
     milestone_percentages = dataset$milestone_percentages,
     divergence_regions = dataset$divergence_regions
