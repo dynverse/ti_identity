@@ -15,12 +15,12 @@ dataset <- task$priors$dataset
 checkpoints <- list(method_afterpreproc = Sys.time())
 
 # TIMING: done with method
-checkpoints$method_aftermethod <- Sys.time())
+checkpoints$method_aftermethod <- Sys.time()
 
 #   ____________________________________________________________________________
 #   Save output                                                             ####
 
-output <- 
+output <-
   wrap_data(cell_ids = rownames(counts)) %>%
   add_trajectory(
     milestone_network = dataset$milestone_network,
